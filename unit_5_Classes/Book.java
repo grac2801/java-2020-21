@@ -1,79 +1,78 @@
 package unit_5_Classes;
 
-public class Book 
+public class Book
 {
-	//Data encapsulation
-//	Fields and methods
+	// instance variables or fields
 	private String author;
 	private String title;
 	private int year;
 	
 	
-	//Constructor
-	public Book(String a, String b, int y)
+	// Constructor
+	public Book()
 	{
-		title = a;
-		author = b;
-//		year = y;
-		if(y >= 1450)
-		{
-			year = y;
-		}
-		else
-		{
-			year = 1900;
-		}
+		
 	}
 	
 
-	//Mutator or setter
-	public void setTitle(String t)
+
+	public Book(String author, String title, int year)
 	{
-		title = t;
-	}
+		this.author = author;
+		this.title = title;
+		if (year >= 1450)
+		{
+			this.year = year;
+		} 
+		else
+		{
+			this.year = 1900;
+		}
+		
+	}// End of constructor
+
 	
-	//Accessor or getter
-	public String getTitle()
-	{
-		return title;
-	}
 	
-	//Mutator for author
-	public void setAuthor(String s)
-	{
-		author = s;
-	}
 	
+
+
+
+	// [Getters or accessor] and [setters or mutator]
 	public String getAuthor()
 	{
 		return author;
 	}
-	
-	//Mutator for year
-	public void setYear(int y)
+
+	public void setAuthor(String author)
 	{
-		if (year >= 1450)
-		{
-			year = y;
-		}
-		else
-		{
-			year = 1900;
-		}
+		this.author = author;
 	}
-	
+
+	public String getTitle()
+	{
+		return title;
+	}
+
+	public void setTitle(String title)
+	{
+		this.title = title;
+	}
+
 	public int getYear()
 	{
 		return year;
 	}
-	
-	
-	public String toString()
+
+	public void setYear(int year)
 	{
-		String info = "Author: " + author + 
-		"\nTitle: " + title + "\nYear: " + year;
-		return info;
+		this.year = year;
 	}
+	
+	
+	
+	
+	
+	
 	
 	public boolean equals(Book other)
 	{
@@ -87,17 +86,12 @@ public class Book
 	}
 
 	
-	/*
-	 * Add a field called genre to the book class
-	 * Update constructor
-	 * Add accessor and mutator for this field
-	 */
-	
-	
-	
-}//End of Book class
-
-
-
-
-
+	@Override
+	public String toString()
+	{
+		String info = "The author is: " + author +
+				"\nTitle: " + title + 
+				"\nYear: " + year;
+		return info;
+	}
+}

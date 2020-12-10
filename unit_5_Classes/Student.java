@@ -1,5 +1,6 @@
 package unit_5_Classes;
 
+@SuppressWarnings("unused")
 public class Student
 {
 	private String name;
